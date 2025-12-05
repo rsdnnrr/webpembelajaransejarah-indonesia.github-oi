@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SMA Negeri 6 Garut</title>
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- LOGIN / REGISTER SCREEN -->
+  <div id="auth-screen" class="screen centered">
+    <div class="auth-card">
+      <img src="1000046346.jpg" alt="Logo" class="auth-logo">
+      <h1>SMA Negeri 6 Garut</h1>
+      <p class="muted">Masuk dengan Gmail untuk melanjutkan</p>
+
+      <div id="auth-forms">
+        <!-- LOGIN -->
+        <div id="login-form">
+          <input id="login-email" type="email" placeholder="Gmail (contoh: nama@gmail.com)">
+          <input id="login-pass" type="password" placeholder="Password">
+          <div class="row">
+            <button id="btn-login" class="btn gold">Continue</button>
+            <button id="show-register" class="btn ghost">Buat Akun</button>
+          </div>
+          <p class="muted small">Data tersimpan lokal di browser (demo).</p>
+        </div>
+
+        <!-- REGISTER (hidden by default) -->
+        <div id="register-form" class="hidden">
+          <input id="reg-email" type="email" placeholder="Gmail (contoh: nama@gmail.com)">
+          <input id="reg-pass" type="password" placeholder="Buat Password">
+          <input id="reg-pass2" type="password" placeholder="Konfirmasi Password">
+          <div class="row">
+            <button id="btn-register" class="btn gold">Buat Akun & Continue</button>
+            <button id="show-login" class="btn ghost">Kembali</button>
+          </div>
+          <p class="muted small">Gunakan Gmail untuk akun sekolah. (Demo: tidak terkoneksi server)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" class="hidden">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="container topbar-inner">
+       <div class="brand">
+  <img src="1000046346.jpg" alt="Logo SMA 6 Garut" class="logo">
+
+  <div class="brand-text">
+    <span>SMA</span>
+    <span>Negeri 6</span>
+    <span>Garut</span>
+  </div>
+</div>
+
+
+        <nav class="nav" aria-label="Main">
+          <button class="nav-link" data-show="home">Beranda</button>
+          <button class="nav-link" data-show="profil_sekolah">Profil Sekolah</button>
+          <button class="nav-link" data-show="absensi">Absensi</button>
+          <button class="nav-link" data-show="materi">Materi Pembelajaran</button>
+          <button class="nav-link" data-show="kuis">Kuis</button>
+          <button class="nav-link" data-show="game">Game Ular Tangga</button>
+          <button class="nav-link" data-show="evaluasi">Evaluasi Pembelajaran</button>
+          <button class="nav-link" data-show="tim">Tim</button>
+          <button class="nav-link" data-show="kontak_saran">Kontak Saran</button>
+          <button class="nav-link" data-show="medsos">Media Soaial</button>
+          <button id="btn-logout" class="btn ghost">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HOME -->
+     <section id="home" class="page">
+    <h2 class="menu-title">Menu Utama</h2>
+
+    <div class="menu-grid">
+
+        <div class="menu-card" onclick="goTo('profil_sekolah')">
+            <img src="1000046346.jpg" alt="">
+            <p>Profil Sekolah</p>
+        </div>
+
+        <div class="menu-card" onclick="goTo('absensi')">
+            <img src="absensi.png" alt="">
+            <p>Absensi</p>
+        </div>
+
+        <div class="menu-card" onclick="goTo('materi')">
+            <img src="pelajaran.jpg" alt="">
+            <p>Materi Pembelajaran</p>
+        </div>
+
+        <div class="menu-card" onclick="goTo('kuis')">
+            <img src="quiz.jpg" alt="">
+            <p>Kuis</p>
+        </div>
+
+        <div class="menu-card" onclick="goTo('game')">
+            <img src="game.jpg" alt="">
+            <p>Game Ular Tangga</p>
+        </div>
+
+        <div class="menu-card" onclick="goTo('evaluasi')">
+            <img src="evaluasi.jpg" alt="">
+            <p>Evaluasi Pembelajaran</p>
+        </div>
+
+        <div class="menu-card" onclick="goTo('tim')">
+            <img src="tim.jpg" alt="">
+            <p>Tim</p>
+        </div>
+
+        <div class="menu-card" onclick="goTo('kontak_saran')">
+            <img src="kotak.png" alt="">
+            <p>Kontak Saran</p>
+        </div>
+
+        <div class="menu-card" onclick="goTo('medsos')">
+            <img src="media.jpg" alt="">
+            <p>Media Sosial</p>
+        </div>
+
+    </div>
+</section>
+
+        <!-- Profil sejarah -->
+      <section id="profil_sekolah" class="page">
+        <div class="hero">
+          <div class="container profil-wrapper">
+            <div class="profil-text">
+              <h2>Selamat datang di SMA Negeri 6 Garut </h2>
+              <h3>SMA Negeri 6 Garut</h3>
+              <p class="lead">SMAN 6 Garut adalah sekolah negeri yang berlokasi di Kabupaten Garut, Kecamatan Tarogong Kidul, dengan status akreditasi A. Sekolah ini berdiri pada 20 November 1984 dan menjadi salah satu sekolah favorit karena memprioritaskan pengembangan bidang akademik dan non-akademik secara seimbang. Terdapat 15 kegiatan ekstrakurikuler yang ditawarkan di sekolah ini, mulai dari seni hingga olahraga. </p>
+              <h3>Informasi dasar</h3>
+              <ul>
+                <li><strong>Nama:</strong>SMA Negeri 6 Garut</li>
+                <li><strong>Status:</strong> Negeri</li>
+                <li><strong>Akreditasi:</strong> A</li>
+                <li><strong>NPSN:</strong> 20227475</li>
+                 <li><strong>SK Pendirian:</strong> 0558/0/1984 tertanggal 20 November 1984</li>
+                 <li><strong>Lokasi:</strong> Kabupaten Garut, Kecamatan Tarogong Kidul</li>
+              </ul>
+              <h3>Visi SMA Negeri 6 Garut</h3>
+              <p class="lead"> "MANDIRI", KOMPETITIF, DAN BERWAWASAN LINGKUNGAN</p>
+              <h3>Misi SMA Negeri 6 Garut</h3>
+<ol>
+  <li>Mewujudkan warga sekolah yang beriman, dinamis terhadap perubahan, dan berperilaku ringkas.</li>
+  <li>Meningkatkan keterhubungan aktivitas pembelajaran akademik dan nonakademik dengan nilai-nilai religius.</li>
+  <li>Mendorong kreativitas dan inovasi warga sekolah dalam membangun budaya positif.</li>
+  <li>Meningkatkan profesionalisme warga sekolah dalam pengelolaan sekolah yang transparan, akuntabel, efektif, dan partisipatif.</li>
+  <li>Meningkatkan prestasi akademik dan nonakademik peserta didik melalui pembelajaran Merdeka Belajar untuk memperkuat daya saing lulusan menuju perguruan tinggi.</li>
+  <li>Menumbuhkan kesadaran kolektif warga sekolah untuk menciptakan lingkungan sekolah yang sehat, harmonis, dan humanis.</li>
+</ol>
+<h3>Tujuan SMA Negeri 6 Garut</h3>
+<ol>
+  <li>
+    Terbentuknya karakter Profil Pelajar Pancasila yang beriman, bertakwa kepada Tuhan Yang Maha Esa,
+    dan berakhlak mulia; memiliki kebhinekaan global; mampu bergotong royong; mandiri; bernalar kritis; dan kreatif.
+  </li>
+
+  <li>
+    Terwujudnya kreativitas dan inovasi yang komprehensif dan berkesinambungan bagi seluruh warga sekolah.
+  </li>
+
+  <li>
+    Meningkatkan profesionalisme warga sekolah dalam ekosistem pendidikan yang transparan,
+    akuntabel, efektif, dan partisipatif.
+  </li>
+
+  <li>
+    Meningkatkan daya serap lulusan ke perguruan tinggi melalui peningkatan prestasi akademik dan nonakademik peserta didik.
+  </li>
+
+  <li>
+    Terbangunnya suasana lingkungan sekolah yang harmonis, sehat, dan humanis.
+  </li>
+</ol>
+<h3>Strategi SMA Negeri 6 Garut</h3>
+<ol>
+  <li>
+    Mengoptimalkan fungsi dan peran MGMP (Musyawarah Guru Mata Pelajaran) sekolah melalui
+    program kerja yang terukur, terjadwal, dan sesuai kebutuhan pembelajaran.
+  </li>
+
+  <li>
+    Melaksanakan pembinaan karakter serta pengembangan budaya positif secara komprehensif dan berkelanjutan
+    melalui penerapan peraturan akademik yang konsisten bagi seluruh warga sekolah.
+  </li>
+
+  <li>
+    Mewujudkan sistem pengelolaan sekolah yang transparan, akuntabel, dan efektif melalui rapat dinas berkala
+    disertai partisipasi aktif seluruh warga sekolah.
+  </li>
+
+  <li>
+    Meningkatkan prestasi akademik dan nonakademik peserta didik melalui mekanisme penghargaan (reward)
+    dan apresiasi yang jelas bagi seluruh warga sekolah yang berkontribusi.
+  </li>
+
+  <li>
+    Membangun sinergi dan kolaborasi berkelanjutan antara sekolah, orang tua/wali, masyarakat, alumni,
+    dan instansi terkait untuk mendukung pelaksanaan berbagai program sekolah.
+  </li>
+</ol>
+    <h3>Tata Tertib SMA Negeri 6 Garut</h3>
+
+    <!-- BAB I -->
+    <h3>BAB I — Ketentuan Umum</h3>
+    <ol>
+      <li>
+        Tata tertib ini menjadi pedoman bagi siswa dalam bersikap, berucap, bertindak,
+        serta beraktivitas di sekolah demi terciptanya iklim belajar yang efektif.
+      </li>
+      <li>
+        Tata tertib disusun berdasarkan nilai ketakwaan, sopan santun, kedisiplinan,
+        kebersihan, kesehatan, kerapian, keamanan, serta nilai yang mendukung
+        kegiatan belajar.
+      </li>
+      <li>
+        Guru berhak memberikan sanksi kepada siswa yang melanggar tata tertib serta
+        wajib menegakkan peraturan dengan adil dan bertanggung jawab.
+      </li>
+      <li>
+        Siswa wajib melaksanakan seluruh ketentuan tata tertib dengan penuh kesadaran.
+      </li>
+    </ol>
+
+    <!-- BAB II -->
+    <h3>BAB II — Ketentuan Khusus</h3>
+
+    <!-- PASAL 1 -->
+    <h4>Pasal 1 — Ketentuan Pakaian Seragam Sekolah</h4>
+
+    <h5>1. Pakaian Seragam</h5>
+    <p><strong>A. Umum</strong></p>
+    <ol>
+      <li>Sopan dan rapi sesuai ketentuan sekolah.</li>
+      <li>Memakai seragam sesuai hari yang ditentukan.</li>
+      <li>Memakai topi, badge OSIS, badge identitas sekolah & kelas, dasi, serta atribut pelengkap sesuai ketentuan.</li>
+      <li>Sepatu hitam / dominan hitam dan kaos kaki putih.</li>
+      <li>Pakaian tidak tipis, tidak ketat, dan tidak membentuk tubuh.</li>
+    </ol>
+
+    <p><strong>B. Khusus Laki-laki</strong></p>
+    <ol>
+      <li>Kemeja dimasukkan ke dalam celana.</li>
+      <li>Celana panjang standar (bukan saku tempel), tidak digulung dan tidak disobek.</li>
+      <li>Baju dan celana tidak dicoret-coret.</li>
+    </ol>
+
+    <p><strong>C. Khusus Perempuan</strong></p>
+    <ol>
+      <li>Rok panjang sampai mata kaki, jilbab putih.</li>
+      <li>Lengan baju tidak digulung.</li>
+    </ol>
+
+    <h5>2. Penggunaan Seragam Sesuai Hari</h5>
+    <ul>
+      <li>Senin–Selasa: Putih–abu lengkap atribut.</li>
+      <li>Rabu: Batik sekolah.</li>
+      <li>Kamis: Pakaian adat kasundaan.</li>
+      <li>Jumat & tanggal 14: Seragam Pramuka.</li>
+      <li>Tanggal 22: Pakaian Santri.</li>
+    </ul>
+
+    <h5>3. Pakaian Olahraga</h5>
+    <p>Siswa menggunakan pakaian olahraga resmi sekolah.</p>
+
+    <h5>4. Pakaian Ekstrakurikuler</h5>
+    <p>Siswa dapat mengenakan seragam ekskul sesuai ketentuan sekolah.</p>
+
+    <!-- PASAL 2 -->
+    <h4>Pasal 2 — Kartu Identitas</h4>
+    <ol>
+      <li>Siswa wajib memiliki Kartu Identitas/OSIS.</li>
+      <li>Diproses maksimal 2 bulan setelah diterima.</li>
+      <li>Biaya & ketentuan diatur melalui edaran sekolah.</li>
+    </ol>
+
+    <!-- PASAL 3 -->
+    <h4>Pasal 3 — Masuk, Pulang, dan Kehadiran</h4>
+    <ol>
+      <li>Masuk & pulang sesuai aturan sekolah.</li>
+      <li>Terlambat &lt; 10 menit: lapor guru piket, boleh masuk kelas.</li>
+      <li>Terlambat &gt; 10 menit: tidak boleh masuk pelajaran pertama.</li>
+      <li>Ketidakhadiran harus diberi pemberitahuan lisan/tulis sesuai ketentuan.</li>
+      <li>Tanpa pemberitahuan = alpa/bolos.</li>
+      <li>Siswa keluar kelas harus seizin guru.</li>
+      <li>Dilarang meninggalkan lingkungan sekolah tanpa izin.</li>
+      <li>Istirahat tidak boleh digunakan untuk hal yang melanggar tata tertib.</li>
+      <li>Wajib langsung pulang setelah sekolah, kecuali ekskul.</li>
+      <li>Dilarang nongkrong di luar sekolah setelah pulang.</li>
+    </ol>
+
+    <!-- PASAL 4 -->
+    <h4>Pasal 4 — Rambut, Kuku, Tato, Aksesoris, HP</h4>
+
+    <h5>A. Umum</h5>
+    <ul>
+      <li>Dilarang berkuku panjang, mengecat rambut/kuku.</li>
+      <li>Dilarang bertato.</li>
+      <li>Dilarang mengaktifkan HP saat KBM.</li>
+      <li>Dilarang membawa alat rias berlebihan.</li>
+    </ul>
+
+    <h5>B. Laki-laki</h5>
+    <ul>
+      <li>Rambut pendek rapi, tidak melebihi alis/telinga/kerah.</li>
+      <li>Dilarang memakai rantai, anting, gelang, cincin, dll.</li>
+    </ul>
+
+    <h5>C. Perempuan</h5>
+    <ul>
+      <li>Rambut panjang dianjurkan diikat.</li>
+      <li>Perhiasan boleh, asal wajar.</li>
+      <li>Dilarang memakai asesoris berlebihan.</li>
+    </ul>
+
+    <!-- PASAL 5 -->
+    <h4>Pasal 5 — Kebersihan & Kedisiplinan</h4>
+    <ul>
+      <li>Piket kelas wajib berjalan bergiliran.</li>
+      <li>Siswa menjaga kebersihan seluruh fasilitas sekolah.</li>
+      <li>Membuang sampah pada tempatnya.</li>
+      <li>Budaya antre wajib.</li>
+      <li>Menjaga ketenangan selama KBM.</li>
+      <li>Menaati jadwal pelajaran dan fasilitas sekolah.</li>
+    </ul>
+
+    <!-- PASAL 6 -->
+    <h4>Pasal 6 — Ekstrakurikuler</h4>
+    <ul>
+      <li>Siswa wajib mengikuti satu ekskul.</li>
+      <li>Wajib menaati peraturan ekskul.</li>
+      <li>Kegiatan ekskul mengikuti jadwal sekolah.</li>
+    </ul>
+
+    <!-- PASAL 7 -->
+    <h4>Pasal 7 — Sopan Santun Pergaulan</h4>
+    <ul>
+      <li>Salam dan bersalaman saat bertemu guru/karyawan.</li>
+      <li>Menghargai perbedaan agama, budaya, pertemanan.</li>
+      <li>Menghormati ide/pendapat orang lain.</li>
+      <li>Berbicara sopan, tidak kasar/kotor.</li>
+      <li>Berani mengakui kesalahan & meminta maaf.</li>
+    </ul>
+
+    <!-- PASAL 8 -->
+    <h4>Pasal 8 — Upacara & Kegiatan Sekolah</h4>
+    <ul>
+      <li>Wajib mengikuti upacara dengan seragam lengkap.</li>
+      <li>Wajib mengikuti peringatan hari besar nasional.</li>
+      <li>Wajib mengikuti kegiatan sekolah & praktik lapangan.</li>
+    </ul>
+
+    <!-- PASAL 9 -->
+    <h4>Pasal 9 — Kegiatan Keagamaan</h4>
+    <ul>
+      <li>Siswa wajib mengikuti kegiatan keagamaan sekolah.</li>
+      <li>Pengaturan kegiatan diatur melalui edaran sekolah.</li>
+    </ul>
+
+    <!-- PASAL 10 -->
+    <h4>Pasal 10 — Larangan-Larangan</h4>
+    <ul>
+      <li>Dilarang membawa/menkonsumsi rokok, miras, narkoba.</li>
+      <li>Dilarang membawa senjata tajam atau berbahaya.</li>
+      <li>Dilarang berkelahi.</li>
+      <li>Dilarang mencoret fasilitas sekolah.</li>
+      <li>Dilarang berkata kotor atau menyebarkan pornografi.</li>
+      <li>Dilarang berjudi atau membawa alat permainan tidak relevan.</li>
+    </ul>
+
+    <!-- BAB III -->
+    <h3>BAB III — Pelanggaran & Sanksi</h3>
+    <ol>
+      <li>Guru berhak memberikan sanksi kepada pelanggar.</li>
+      <li>Sanksi diberikan melalui koordinasi dengan BK.</li>
+      <li>Sanksi bersifat berjenjang.</li>
+    </ol>
+
+    <h4>Jenis Sanksi:</h4>
+    <ul>
+      <li>Teguran lisan</li>
+      <li>Peringatan lisan</li>
+      <li>Peringatan tertulis</li>
+      <li>Pemanggilan orang tua</li>
+      <li>Penyitaan</li>
+      <li>Pemulangan</li>
+      <li>Penindakan langsung</li>
+      <li>Skorsing</li>
+      <li>Dikeluarkan dari sekolah</li>
+    </ul>
+     <div class="container">
+          <h3>Lokasi SMA Negeri 6 Garut</h3>
+          <p class="muted">Jl. Guntur Melati No. 12 Garut, Desa Haurpanggung, Kec. Tarogong Kidul, Kab. Garut</p>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps?q=SMA+Negeri+6+Garut&output=embed"
+              width="100%" height="360" style="border:0;border-radius:12px" allowfullscreen></iframe>
+          </div>
+        </div>
+            </div>
+            <div class="profil-img">
+              <img src="Sejarah.jpg" alt="Sejarah">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABSENSI -->
+<section id="absensi" class="page hidden">
+  <div class="container">
+    <h3>Absensi Kelas</h3>
+    <p class="muted">Silakan pilih kelas dan tanggal untuk melakukan absensi.</p>
+
+    <div class="absen-controls">
+      <label>
+        Pilih Kelas:
+        <select id="absen-kelas">
+          <option value="10">Kelas 10</option>
+          <option value="11">Kelas 11</option>
+          <option value="12">Kelas 12</option>
+        </select>
+      </label>
+
+      <label>
+        Tanggal:
+        <input type="date" id="absen-tanggal">
+      </label>
+
+      <button id="absen-load" class="btn gold">Muat Siswa</button>
+    </div>
+
+    <div id="absen-area"></div>
+
+    <div class="absen-actions">
+      <button id="absen-save" class="btn gold">Simpan Absensi</button>
+      <button id="absen-reset" class="btn ghost">Reset</button>
+    </div>
+
+    <div id="absen-result" class="result" style="display:none"></div>
+    <!-- VIDEO ABSENSI -->
+<div id="video-absensi" class="video-box">
+    <h3> Absensi</h3>
+
+    <img src="absensi3.jpg" class="video-thumbnail"
+         onclick="openVideo('absensi')">
+
+    <p>Klik gambar untuk membuka absensi.</p>
+</div>
+  </div>
+</section>
+
+
+      <!-- MATERI -->
+      <section id="materi" class="page hidden">
+        <div class="container">
+          <h3>Materi Pembelajaran</h3>
+          <p class="muted">Pilih jenjang kelas untuk melihat daftar bab.</p>
+
+          <div class="tabs">
+            <button class="tab active" data-class="10">Kelas 10</button>
+            <button class="tab" data-class="11">Kelas 11</button>
+            <button class="tab" data-class="12">Kelas 12</button>
+          </div>
+
+          <div id="pdf-viewer" class="page hidden">
+    <h2>📄 Materi PDF</h2>
+    <iframe id="pdf-frame" width="100%" height="600px" style="border-radius:12px;"></iframe>
+</div>
+
+
+          <div id="materi-content" class="materi-grid">
+            <!-- content diisi oleh JS -->
+          </div>
+          <div id="materi-video" class="materi-video-box">
+    <h3>🎥 Video Pembelajaran</h3>
+
+    <img id="video-thumb" 
+         src="vidpembelajaran.jpg" 
+         class="video-thumb"
+         onclick="openPembelajaranVideo()">
+
+    <p>Klik gambar untuk membuka video pembelajaran.</p>
+</div>
+        </div>
+      </section>
+
+      <!-- KUIS -->
+      <section id="kuis" class="page hidden">
+        <div class="container">
+          <h3>Kuis Interaktif — Semua Kelas</h3>
+          <div class="kuis-controls">
+            <label>Pilih Kelas:
+              <select id="kelas-select">
+                <option value="10">Kelas 10</option>
+                <option value="11">Kelas 11</option>
+                <option value="12">Kelas 12</option>
+              </select>
+            </label>
+            <button id="start-quiz" class="btn gold">Muat Soal</button>
+          </div>
+
+          <form id="quiz-form" class="quiz-form" onsubmit="return false;">
+            <div id="questions-area"></div>
+
+            <div class="quiz-actions">
+              <button id="submit-quiz" class="btn gold" type="button">Periksa Jawaban</button>
+              <button id="reset-quiz" class="btn ghost" type="button">Reset</button>
+            </div>
+
+            <div id="quiz-result" class="result" aria-live="polite" style="display:none"></div>
+          </form>
+        </div>
+        <!-- VIDEO KUIS -->
+<div id="video-kuis" class="video-box">
+    <h3>Kuis</h3>
+
+    <img src="quiz3.jpg" class="video-thumbnail"
+         onclick="openVideo('kuis')">
+
+    <p>Klik gambar untuk membuka kuis.</p>
+</div>
+      </section>
+
+<!-- GAME ULAR TANGGA -->
+<section id="game" class="page hidden">
+  <div class="container">
+    <h2>🐍 Game Ular Tangga — Duel 1 vs 1</h2>
+
+    <canvas id="board" width="400" height="400"
+      style="background:#fff;border-radius:12px;margin-bottom:20px"></canvas>
+
+    <button id="roll-dice" class="btn gold">🎲 Kocok Dadu</button>
+    <p id="turn-info" style="font-size:18px;margin-top:10px;font-weight:bold"></p>
+    <p id="dice-result" style="font-size:16px;margin-top:5px"></p>
+
+    <div id="question-box"
+         style="display:none;margin-top:20px;background:#fff;padding:20px;border-radius:12px;color:#000">
+      <h3>Pertanyaan Sejarah</h3>
+      <p id="question-text"></p>
+
+      <div id="answers"></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVALUASI PEMBELAJARAN -->
+<section id="evaluasi" class="page hidden">
+  <div class="container">
+    <h3>Evaluasi Pembelajaran</h3>
+    <p class="muted">Pilih jenjang kelas untuk melakukan evaluasi pembelajaran melalui Google Form.</p>
+
+    <div class="evaluasi-grid">
+
+      <!-- KELAS 10 -->
+      <div class="evaluasi-card" onclick="openEvaluasi(10)">
+        <img src="kelas10.jpg" alt="Kelas 10">
+        <h4>Kelas 10</h4>
+        <p>Evaluasi untuk kelas X</p>
+      </div>
+
+      <!-- KELAS 11 -->
+      <div class="evaluasi-card" onclick="openEvaluasi(11)">
+        <img src="kelas11.jpg" alt="Kelas 11">
+        <h4>Kelas 11</h4>
+        <p>Evaluasi untuk kelas XI</p>
+      </div>
+
+      <!-- KELAS 12 -->
+      <div class="evaluasi-card" onclick="openEvaluasi(12)">
+        <img src="kelas12.jpg" alt="Kelas 12">
+        <h4>Kelas 12</h4>
+        <p>Evaluasi untuk kelas XII</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+      <!-- TIM -->
+      <section id="tim" class="page hidden">
+        <div class="container">
+          <h3>Tim Pengembang</h3>
+          <p class="muted">Tim yang ikut membuat portal ini</p>
+          <div class="team-grid">
+            <div class="team-card"><img src="thoriq.jpg" alt=""><div class="team-body"><h4>Mohammed Thoriq Rizqiyan Noor</h4><p class="muted">NIM 25572014006</p></div></div>
+            <div class="team-card"><img src="nibras.jpg" alt=""><div class="team-body"><h4>Nibras Azzahra</h4><p class="muted">NIM 2557201073024</p></div></div>
+            <div class="team-card"><img src="razief.jpg" alt=""><div class="team-body"><h4>Razief Azrieliqha Putra</h4><p class="muted">NIM 25572013017</p></div></div>
+            <div class="team-card"><img src="yansa.jpg" alt=""><div class="team-body"><h4>Yansa Alamsyah</h4><p class="muted">NIM 2557201073019</p></div></div>
+            <div class="team-card"><img src="risdan.jpg" alt=""><div class="team-body"><h4>Risdan Irsadud Jaman</h4><p class="muted">NIM 25572014010</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAK & KOTAK SARAN -->
+<section id="kontak_saran" class="page hidden">
+  <div class="container">
+    <h3>Kontak & Kotak Saran SMA Negeri 6 Garut</h3>
+    <p class="muted">Silakan hubungi kami atau kirimkan saran Anda melalui form di samping.</p>
+
+    <div class="kontak-grid">
+
+      <!-- KIRI: INFORMASI KONTAK -->
+      <div class="kontak-info">
+        <h4>Informasi Kontak Resmi</h4>
+        <ul>
+          <li><strong>Alamat:</strong> Jl. Guntur Melati No. 12, Haurpanggung,<br> Tarogong Kidul, Garut, Jawa Barat 44151</li>
+          <li><strong>Nomor Telepon:</strong> 0262-231509</li>
+          <li><strong>Email:</strong> sman_6garut@yahoo.co.id</li>
+          <li><strong>Website:</strong> smanegeri6garut.sch.id</li>
+          <li><strong>Instagram:</strong> @sman6grt</li>
+          <li><strong>Facebook:</strong> SMAN 6 GARUT</li>
+        </ul>
+      </div>
+
+      <!-- KANAN: FORM KOTAK SARAN -->
+      <div class="kontak-form">
+        <h4>Kirim Pesan / Saran</h4>
+
+        <label>Nama Lengkap</label>
+        <input type="text" id="saran-nama" placeholder="Masukkan nama Anda">
+
+        <label>Nomor HP / WhatsApp</label>
+        <input type="text" id="saran-hp" placeholder="08xxxxxxxxxx">
+
+        <label>Pesan / Keluhan</label>
+        <textarea id="saran-pesan" rows="5" placeholder="Tuliskan pesan atau keluhan Anda"></textarea>
+
+        <button id="saran-kirim" class="btn gold" style="margin-top:10px">Kirim Saran</button>
+
+        <div id="saran-status" class="result" style="display:none; margin-top:10px"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- MEDIA SOSIAL -->
+<section id="medsos" class="page hidden">
+  <div class="container">
+    <h3>Media Sosial Resmi</h3>
+    <p class="muted">Kunjungi media sosial SMA Negeri 6 Garut untuk informasi terbaru.</p>
+
+    <div class="medsos-grid">
+
+      <!-- YOUTUBE -->
+      <div class="medsos-card" onclick="openSosmed('yt')">
+        <img src="yt.jpg" alt="YouTube">
+        <h4>YouTube</h4>
+        <p>Channel resmi SMA 6 Garut</p>
+      </div>
+
+      <!-- INSTAGRAM -->
+      <div class="medsos-card" onclick="openSosmed('ig')">
+        <img src="ig.jpg" alt="Instagram">
+        <h4>Instagram</h4>
+        <p>@sman6grt</p>
+      </div>
+
+      <!-- TIKTOK -->
+      <div class="medsos-card" onclick="openSosmed('tt')">
+        <img src="tiktok.jpg" alt="TikTok">
+        <h4>TikTok</h4>
+        <p>Konten edukasi & sekolah</p>
+      </div>
+
+      <!-- FACEBOOK -->
+      <div class="medsos-card" onclick="openSosmed('fb')">
+        <img src="fb.jpg" alt="Facebook">
+        <h4>Facebook</h4>
+        <p>SMAN 6 GARUT</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 SMA Negeri 6 Garut </p>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
+
