@@ -1,0 +1,433 @@
+:root{
+  --blue-900:#06283D;
+  --blue-700:#0B7A8C;
+  --gold:#D4A017;
+  --muted:rgba(255,255,255,0.85);
+  --card:rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box;font-family:"Poppins",system-ui,Segoe UI,Roboto,Arial,sans-serif}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--blue-900),var(--blue-700));color:#fff}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.centered{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.hidden{display:none}
+.muted{color:var(--muted)}
+.small{font-size:13px;color:rgba(255,255,255,0.8)}
+
+/* AUTH */
+.auth-card{width:360px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));padding:22px;border-radius:14px;text-align:center;box-shadow:0 12px 40px rgba(2,6,23,0.6)}
+.auth-logo{width:84px;height:84px;border-radius:12px;border:3px solid var(--gold);object-fit:cover;margin-bottom:8px}
+.auth-card h1{margin:6px 0 4px 0;color:var(--gold);font-size:18px}
+input[type="email"], input[type="password"]{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:0;background:rgba(255,255,255,0.04);color:#fff}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;background:linear-gradient(180deg,rgba(2,6,23,0.4),rgba(2,6,23,0.6));backdrop-filter:blur(4px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:60}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:56px;height:56px;border-radius:10px;border:3px solid var(--gold);object-fit:cover}
+.brand h1{margin:0;color:var(--gold);font-size:18px}
+.nav{display:flex;gap:10px}
+.nav-link{background:transparent;border:0;color:#e6f6ff;padding:8px 10px;border-radius:8px;cursor:pointer}
+.nav-link:hover{background:rgba(255,255,255,0.03);color:var(--gold)}
+.btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+.btn.gold{background:var(--gold);color:#06283D}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#fff}
+
+/* HERO */
+.hero{padding:48px 0;background-image:linear-gradient(rgba(2,6,23,0.45),rgba(2,6,23,0.45)), url('https://upload.wikimedia.org/wikipedia/commons/d/d4/Candi_Borobudur_view.jpg');background-size:cover;background-position:center}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center}
+.hero-text h2{margin:0;color:var(--gold);font-size:36px}
+.lead{color:rgba(255,255,255,0.9);margin-top:8px}
+.hero-img img{width:100%;border-radius:12px;box-shadow:0 12px 40px rgba(2,6,23,0.6)}
+
+/* SECTIONS */
+.section{padding:40px 0}
+h3{color:var(--gold)}
+.tabs{display:flex;gap:10px;margin:12px 0;justify-content:center}
+.tab{padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+.tab.active{background:var(--gold);color:#06283D}
+
+
+.menu-title {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+/* ==== BERANDA MENU STYLE ==== */
+/*profil sekolah*/.menu-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 40px;
+    padding: 20px;
+}
+
+.menu-card{
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: .25s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.menu-card:hover{
+    transform: scale(1.05);
+}
+
+.menu-card img{
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.menu-card p{
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #06283D;
+}
+
+/* ABSENSI */
+.absen-controls{
+  display:flex;
+  gap:12px;
+  margin-bottom:16px;
+  align-items:center;
+}
+
+.absen-table{
+  width:100%;
+  background:var(--card);
+  padding:16px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.absen-row{
+  display:flex;
+  justify-content:space-between;
+  padding:8px;
+  background:rgba(255,255,255,0.08);
+  margin-bottom:8px;
+  border-radius:8px;
+  color:#06283D;
+}
+
+.absen-actions{
+  margin-top:16px;
+  display:flex;
+  gap:12px;
+}
+
+.absen-status select{
+  padding:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+
+/* MATERI */
+.materi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
+.materi-card{background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.materi-card h4{margin:0;color:var(--gold)}
+
+/* KUIS */
+.kuis-controls{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.quiz-form{background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.question{padding:12px;border-radius:8px;background:rgba(255,255,255,0.01);margin-bottom:12px}
+.question h4{margin:0 0 8px 0}
+.options label{display:block;padding:8px;border-radius:6px;cursor:pointer}
+.quiz-actions{display:flex;gap:12px;align-items:center;margin-top:12px}
+.result{margin-top:14px;padding:12px;border-radius:8px;background:rgba(0,0,0,0.25);font-weight:700;text-align:center}
+
+.materi-video-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.video-thumb {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.video-thumb:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+/* EVALUASI */
+.evaluasi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+  margin-top:25px;
+}
+
+.evaluasi-card{
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  color:#06283D;
+  cursor:pointer;
+  transition:0.25s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.evaluasi-card:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 22px rgba(0,0,0,0.25);
+}
+
+.evaluasi-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:12px;
+}
+
+.evaluasi-card h4{
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+  color:var(--gold);
+}
+
+.evaluasi-card p{
+  margin-top:6px;
+  color:#102040;
+}
+
+/* Responsive */
+@media(max-width:800px){
+  .evaluasi-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
+.team-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:12px;border-radius:12px;display:flex;gap:12px;align-items:center;border:1px solid rgba(255,255,255,0.03)}
+.team-card img{width:84px;height:84px;border-radius:10px;object-fit:cover;border:3px solid var(--gold)}
+.team-body h4{margin:0}
+
+/* KONTAK & SARAN */
+.kontak-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:20px;
+}
+
+.kontak-info{
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.kontak-info ul{
+  padding-left:20px;
+}
+
+.kontak-info li{
+  margin-bottom:10px;
+  color:var(--muted);
+}
+
+.kontak-form{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.kontak-form label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:600;
+  color:#fff;
+}
+
+.kontak-form input,
+.kontak-form textarea{
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:0;
+  background:rgba(255,255,255,0.1);
+  color:white;
+  margin-bottom:12px;
+}
+
+.kontak-form input::placeholder,
+.kontak-form textarea::placeholder{
+  color:rgba(255,255,255,0.6);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .kontak-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* MAP */
+.map-wrap{margin-top:12px;border-radius:12px;overflow:hidden}
+
+/* FOOTER */
+.footer{padding:18px 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.12));text-align:center;color:rgba(255,255,255,0.7)}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .nav{display:none}
+  .topbar-inner{padding:12px}
+  .hero-img{margin-top:18px}
+}
+
+
+/* MEDIA SOSIAL */
+.medsos-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+  margin-top:25px;
+}
+
+.medsos-card{
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  color:#06283D;
+  cursor:pointer;
+  transition:0.25s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.medsos-card:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 22px rgba(0,0,0,0.25);
+}
+
+.medsos-card img{
+  width:100px;
+  height:100px;
+  object-fit:contain;
+  margin-bottom:12px;
+}
+
+.medsos-card h4{
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+  color:var(--gold);
+}
+
+.medsos-card p{
+  margin-top:6px;
+  color:#102040;
+}
+
+/* Responsive */
+@media(max-width:800px){
+  .medsos-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ==== FIX POSISI GAMBAR PROFIL SEKOLAH ==== */
+.profil-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.profil-text {
+    width: 65%;
+}
+
+.profil-img img {
+    width: 380px;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+@media(max-width:900px){
+    .profil-wrapper {
+        flex-direction: column;
+    }
+    .profil-img img {
+        width: 100%;
+    }
+}
+
+
+/* === FIX LOGO + TEKS HEADER FINAL === */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-text span {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);   /* WARNA EMAS FIX */
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  white-space: nowrap;
+.video-box {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 15px;
+    margin-top: 25px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.video-box h3 {
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.video-thumbnail {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.video-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+}
+
+
